@@ -3,17 +3,17 @@ from tweepy import OAuthHandler
 import json
 import wget
 
-consumer_key = 'ZVRxDCgRW51m7ssYsWDGfYUhF'
-consumer_secret = 'PDTG4shePaKCFDA6CMM3BnmuepeZs2IVIlvGOC6BYcXI2kIMqx'
-access_token = '395461617-tSt09i0JtWW766loBB0Ud9e1bHrAIUuVwp8nlHDP'
-access_secret = '0qTEygwVeJMzmreW34vw1vhsu8RonUzr8oMFaxuA4mnWE'
+consumer_key = '************************'
+consumer_secret = '******************************************'
+access_token = '*************************************************'
+access_secret = '******************************************************'
 
 @classmethod
 def parse(cls, api, raw):
     status = cls.first_parse(api, raw)
     setattr(status, 'json', json.dumps(raw))
     return status
- 
+
 # Status() is the data model for a tweet
 tweepy.models.Status.first_parse = tweepy.models.Status.parse
 tweepy.models.Status.parse = parse
@@ -21,17 +21,17 @@ tweepy.models.Status.parse = parse
 tweepy.models.User.first_parse = tweepy.models.User.parse
 tweepy.models.User.parse = parse
 # You need to do it for all the models you need
- 
+
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_secret)
- 
+
 api = tweepy.API(auth)
 
 tweets = api.user_timeline(screen_name='Comey',
                            count=20, include_rts=False,
                            exclude_replies=True)
 last_id = tweets[-1].id
- 
+
 while (True):
     more_tweets = api.user_timeline(screen_name='Comey',
                                 count=20,
