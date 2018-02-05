@@ -7,7 +7,6 @@ from google.cloud.vision import types
 
 # Instantiates a client
 client = vision.ImageAnnotatorClient()
-# client = vision.Client('Google Cloud Vision API 1-b5c789ae2568.json')
 
 # The name of the image file to annotate
 file_name = os.path.join(
