@@ -24,9 +24,28 @@ def get_images():
 
 	
 def label_images():
+	print('Labels and Landmarks:')
 	for i in length(file_name):
-		with io.open(file_name, 'rb') as image_file:
+		with io.open(file_name[i], 'rb') as image_file:
 		    content = image_file.read()
+		image = types.Image(content=content)
+		response1 = client.label_detection(image=image)
+		labels = response1.label_annotations
+		for label in labels:
+    		print(label.description)
+    		print(landmark.description)
+    		draw = ImageDraw.Draw(im)
+    		draw.text((0, 0),label.description,(255,255,0),font=font)
+    		draw.text((0, 0),landmark.description,(255,255,0),font=font)
+    		draw = ImageDraw.Draw(im1)
+    		im1.save('%s.jpg' % (file_name + str(uuid.uuid4())))
+
+
+
+
+
+
+
 
 
 

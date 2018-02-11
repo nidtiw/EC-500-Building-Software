@@ -33,15 +33,19 @@ image = types.Image(content=content)
 response = client.label_detection(image=image)
 labels = response.label_annotations
 
+label_list = []
+
 response = client.landmark_detection(image=image)
 landmarks = response.landmark_annotations
 
 print('Labels:')
 for label in labels:
     print(label.description)
-    draw = ImageDraw.Draw(im1)
-    draw.text((0, 0),label.description,(255,255,0),font=font)
-    draw = ImageDraw.Draw(im1)
+    label_list.append(label.description)
+label_string = ' '.join(label_list)
+draw = ImageDraw.Draw(im1)
+draw.text((0, 0),label_string,(255,255,0),font=font)
+draw = ImageDraw.Draw(im1)
 
 im1.save("marked_image.jpg")
 
