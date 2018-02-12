@@ -9,7 +9,7 @@ from PIL import ImageDraw
 from google.cloud import vision
 from google.cloud.vision import types
 
-font = ImageFont.truetype("arial.ttf", 28, encoding="unic")
+font = ImageFont.truetype("arial.ttf", 40, encoding="unic")
 
 
 # Instantiates a client
@@ -42,10 +42,10 @@ print('Labels:')
 for label in labels:
     print(label.description)
     label_list.append(label.description)
-label_string = ' '.join(label_list)
+label_string = '| '.join(label_list)
 draw = ImageDraw.Draw(im1)
-draw.text((0, 0),label_string,(255,255,0),font=font)
-draw = ImageDraw.Draw(im1)
+draw.text((0, 25),label_string,(255,255,255,255),font=font)
+# draw = ImageDraw.Draw(im1)
 
 im1.save("marked_image.jpg")
 
