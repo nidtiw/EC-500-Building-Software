@@ -51,5 +51,14 @@ for status in tweets:
     if(len(media) > 0):
         media_files.add(media[0]['media_url'])
 
-for media_file in media_files:
-    wget.download(media_file)
+# for media_file in media_files:
+#     wget.download(media_file)
+
+
+subprocess.call("mkdir results", shell=True)
+
+for i, media_file in enumerate(media_files):
+    wget.download(media_file, out= "%s/%d.jpg" % ('results', i))
+
+subprocess.call("ffmpeg -i results/%d.jpg -vf scale=320:240 results/out_%d.jpg ", shell=True)
+subprocess.call("ffmpeg -r 1 -i results/out_%d.jpg -vcodec libx264 -crf 25  -pix_fmt yuv420p results/test.mp4", shell=True)
