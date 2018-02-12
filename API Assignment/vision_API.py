@@ -18,7 +18,7 @@ client = vision.ImageAnnotatorClient()
 # The name of the image file to annotate
 file_name = os.path.join(
     os.path.dirname(__file__),
-    'resources/Angkor-wat-cambodia.jpg')
+    'resources/alcatraz_SF.jpg')
 
 im1=Image.open(file_name)
 
@@ -35,9 +35,6 @@ labels = response.label_annotations
 
 label_list = []
 
-response = client.landmark_detection(image=image)
-landmarks = response.landmark_annotations
-
 print('Labels:')
 for label in labels:
     print(label.description)
@@ -45,18 +42,27 @@ for label in labels:
 label_string = '| '.join(label_list)
 draw = ImageDraw.Draw(im1)
 draw.text((0, 25),label_string,(255,255,255,255),font=font)
-# draw = ImageDraw.Draw(im1)
 
 im1.save("marked_image.jpg")
+
+landmark_list = []
+
+response = client.landmark_detection(image=image)
+landmarks = response.landmark_annotations
+
+
+# draw = ImageDraw.Draw(im1)
 
 print('Landmarks:')
 
 for landmark in landmarks:
-	print(landmark.description)
-	for location in landmark.locations:
-		lat_lng = location.lat_lng
-		print('Latitude'.format(lat_lng.latitude))
-		print('Longitude'.format(lat_lng.longitude))
+	landmark_list.append(landmark.description)
+	landmark_string = '| '.join(landmark_list)
+print(landmark_string)
+	# for location in landmark.locations:
+	# 	lat_lng = location.lat_lng
+	# 	print('Latitude'.format(lat_lng.latitude))
+	# 	print('Longitude'.format(lat_lng.longitude))
 
 
 

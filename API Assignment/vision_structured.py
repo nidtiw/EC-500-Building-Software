@@ -11,7 +11,7 @@ from PIL import ImageDraw
 from google.cloud import vision
 from google.cloud.vision import types
 
-font = ImageFont.truetype("arial.ttf", 28, encoding="unic")
+font = ImageFont.truetype("arial.ttf", 16, encoding="unic")
 
 # Instantiates a client
 client = vision.ImageAnnotatorClient()
@@ -34,16 +34,18 @@ def get_images():
         response2 = client.landmark_detection(image=image)
         landmarks = response2.landmark_annotations
         for label in labels:
-            print(label.description)
+            # print(label.description)
             label_list.append(label.description)
         label_string = '| '.join(label_list)
+        print(label_string)
         draw = ImageDraw.Draw(im)
         draw.text((0, 25),label_string,(255,255,255,255),font=font)
         for landmark in landmarks:
-            print(landmark.description)
+            # print(landmark.description)
             landmark_list.append(landmark.description)
         landmark_string = '| '.join(landmark_list)
-        draw.text((0, 45),landmark_string,(255,255,255,255),font=font)
+        print(landmark_string)
+        draw.text((0, 50),landmark_string,(255,255,255,255),font=font)
         draw = ImageDraw.Draw(im)
         im.save('%s.jpg' % (filename + str(uuid.uuid4())))
 
