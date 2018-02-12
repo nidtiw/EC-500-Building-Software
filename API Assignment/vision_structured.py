@@ -74,7 +74,7 @@ subprocess.call("mkdir resized", shell=True)
 for i, media_file in enumerate(media_files):
     wget.download(media_file, out= "%s/%d.jpg" % ('results', i))
 
-subprocess.call("ffmpeg -i results/%d.jpg -vf scale=720:720 resized/out_%d.jpg ", shell=True)
+subprocess.call("ffmpeg -i results/%d.jpg -vf scale=1000:1000 resized/out_%d.jpg ", shell=True)
 
 # Using vision API to annotate the images:
 font = ImageFont.truetype("arial.ttf", 16, encoding="unic")
@@ -126,5 +126,5 @@ def get_images():
 # if "__init__" == "__main__":
 get_images()
 # subprocess.call("ffmpeg -r 1 -i results/ann_%d.jpg -vcodec libx264 -crf 25  -pix_fmt yuv420p results/test.mp4", shell=True)
-subprocess.call("ffmpeg -r 10 -i resized/file_%d.jpg -vcodec libx264 -crf 25  -pix_fmt yuv420p resized/test.mp4", shell=True)
+subprocess.call("ffmpeg -r 1 -i resized/file_%d.jpg -vcodec libx264 -crf 25  -pix_fmt yuv420p resized/test.mp4", shell=True)
 
