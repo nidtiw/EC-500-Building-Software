@@ -43,9 +43,9 @@ def get_images():
             print(landmark.description)
             landmark_list.append(landmark.description)
         landmark_string = '| '.join(landmark_list)
-        draw.text((0, 45),landmark_list,(255,255,255,255),font=font)
+        draw.text((0, 45),landmark_string,(255,255,255,255),font=font)
         draw = ImageDraw.Draw(im)
-        im1.save('%s.jpg' % (filename + str(uuid.uuid4())))
+        im.save('%s.jpg' % (filename + str(uuid.uuid4())))
 
 get_images()
 
