@@ -1,4 +1,4 @@
-*** Error handling part is done as a part of the code in the form of 3 tests at the end of the code. It is consolidated in one code ***
+** Error handling part is done as a part of the code in the form of 3 tests at the end of the code. It is consolidated in one code **
 
 # Following is the report containing the code review.
 
