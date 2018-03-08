@@ -1,7 +1,18 @@
-The coding style is clear and following coding standards. There are various specifications for mac and windows user which is very convenient so the user does not have to figure them out for themselves. That's great foresight on the part of the developer.
+# Coding Style:
+The coding style is clear and following coding standards. 
+There are various specifications for mac and windows user which is very convenient so the user does not have to figure them out for themselves. That's great foresight on the part of the developer.
 
-It is a little troubling implementing the code as there are too many arguments required to be entered on the terminal. I assess that it was done to give the user flexibility to customise the final video they will be using, but there needs to be a tradeoff. Too much flexibility will make it complicated for the user to understand and they will have to assiduously go through your code to interpret what information they are required to provide. So a little less flexibility is recommended.
+# Major Issue:
+It is a little troubling implementing the code as there are too many arguments required to be entered on the terminal. 
+I assess that it was done to give the user flexibility to customise the final video they will be using, but there needs to be a tradeoff. 
+Too much flexibility will make it complicated for the user to understand and they will have to assiduously go through your code to interpret what information they are required to provide. 
+A little less flexibility is recommended. The objective is to build an API that is user-friendly. Too many sysargv's create undesirable confusions.
 
+# Accomplishment
 The developer has looked out for all kinds of errors which is amazing. I couldn't find any area which the developer has not accounted for.
+Even each argument error has been documented and errors specific for windows and amc users have also been dealt with.
 
-However, the developer has used python 2.7 syntax and I needed to go and change all the print statements before executing the code.
+# One user-dependent drawback:
+The developer has used python 2.7 syntax. It may be a personal quirk on my part, but I needed to go and change all the print statements before executing the code.
+Even then there were many indentation issues I had to take care of. I suggest that pylint be used in order to take care of these issues.
+This will enable it to execute seamlessly across all platforms. 
