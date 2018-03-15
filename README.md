@@ -13,4 +13,4 @@ The annotations are in white and at the top of the page.
 The terminal output will print Labels and Landmark annotations. 
 
 
-## Please see the Mopidy_Report file for the project report for Review of Software Architechture. Some modifications have been made after the class discussion and newly noticed points have been added as an update.
+***Please see the Mopidy_Report file for the project report for Review of Software Architechture. Some modifications have been made after the class discussion and newly noticed points have been added as an update.***
