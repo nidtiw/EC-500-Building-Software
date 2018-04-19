@@ -1,5 +1,5 @@
-import tweepy
-from tweepy import OAuthHandler
+import tweepy1
+from tweepy1 import OAuthHandler
 import json
 import wget
 import subprocess
@@ -11,10 +11,10 @@ from google.cloud.vision import types
 import io
 import os
 
-consumer_key = 'YOUR_CONSUMER_KEY'
-consumer_secret = 'YOUR_CONSUMER_SECRET_KEY'
-access_token = 'YOUR_ACCESS_TOKEN'
-access_secret = 'YOUR_SECRET_ACCESS_TOKEN'
+consumer_key = 'ZVRxDCgRW51m7ssYsWDGfYUhF'
+consumer_secret = 'PDTG4shePaKCFDA6CMM3BnmuepeZs2IVIlvGOC6BYcXI2kIMqx'
+access_token = '395461617-tSt09i0JtWW766loBB0Ud9e1bHrAIUuVwp8nlHDP'
+access_secret = '0qTEygwVeJMzmreW34vw1vhsu8RonUzr8oMFaxuA4mnWE'
 
 @classmethod
 def parse(cls, api, raw):
@@ -142,11 +142,8 @@ posts = db.posts
 #file = open("airports.json","r")
 #airports_data = json.load(file)
 data = {
-    "twitter handle": username,
-    "tweets count": count,
-    "downloaded media list": mediaURLs,
-    "total images": imageCount,
-    "labels dictionary": labels_dict
+    "twitter handle": @jk_rowling,
+    "tweets count": 100
 
 }
 posts.insert_one(data)
