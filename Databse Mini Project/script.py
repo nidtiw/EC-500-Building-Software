@@ -11,10 +11,10 @@ from google.cloud.vision import types
 import io
 import os
 
-consumer_key = 'ZVRxDCgRW51m7ssYsWDGfYUhF'
-consumer_secret = 'PDTG4shePaKCFDA6CMM3BnmuepeZs2IVIlvGOC6BYcXI2kIMqx'
-access_token = '395461617-tSt09i0JtWW766loBB0Ud9e1bHrAIUuVwp8nlHDP'
-access_secret = '0qTEygwVeJMzmreW34vw1vhsu8RonUzr8oMFaxuA4mnWE'
+consumer_key = ''
+consumer_secret = ''
+access_token = ''
+access_secret = ''
 
 @classmethod
 def parse(cls, api, raw):
