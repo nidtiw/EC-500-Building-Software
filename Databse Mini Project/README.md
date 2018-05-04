@@ -9,4 +9,7 @@ Guidance through the steps of the Mini Project:
 *Importing of the sirports.json file: It was an easy process to import the json files through the mongo shell. Due to the flexibility of the Mongo Database structure, the files are easily imported and as shown in the images are easily accessible. 
 
 **Phase 2**
-*Design MongoDB for project 1: 
+*Design MongoDB for project 1. 
+
+**Kindly look at the Project report for the full steps into the execution of the project**
+**The report is labelled 'Report_Database_Miniproject.pdf'***
